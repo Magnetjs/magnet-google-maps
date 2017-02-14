@@ -19,7 +19,5 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = (0, _convert2.default)(_maps2.default, {
   namespace: 'googleMaps',
   initializer: 'createClient',
-  params: function params(config) {
-    return _extends({}, config, { key: config.key || config.apiKey, Promise: global.Promise });
-  }
+  params: config => _extends({}, config, { key: config.key || config.apiKey, Promise: global.Promise })
 });
