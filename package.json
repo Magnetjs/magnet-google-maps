@@ -1,6 +1,6 @@
 {
   "name": "magnet-google-maps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Readme",
   "keywords": [
     "google-maps",
@@ -21,48 +21,20 @@
   "main": "dist/index.js",
   "repository": "magnetjs/magnet-google-maps",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "fly build",
     "dist": "npm run build && npm publish",
-    "start": "babel src --out-dir dist",
-    "test": "babel-node tests/index.js | tap-spec",
-    "watch": "nodemon --ignore dist --exec \"babel src --out-dir dist --source-maps\"",
-    "watch-all": "concurrently \"npm run watch\" \"npm run watch-test\"",
-    "watch-test": "nodemon --delay 0.5 --ignore src --exec babel-node tests/index.js | tap-spec"
-  },
-  "babel": {
-    "ignore": [
-      "docs",
-      "node_modules",
-      "dist",
-      "test"
-    ],
-    "plugins": [
-      "fast-async"
-    ],
-    "presets": [
-      "stage-3",
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ]
+    "start": "fly"
   },
   "dependencies": {
     "@google/maps": "^0.3.1",
     "magnet-core": "^3.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.6.5",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-stage-3": "^6.22.0",
-    "concurrently": "^2.0.0",
-    "fast-async": "^6.2.0",
-    "nodemon": "^1.9.1",
-    "standard": "^8.6.0"
+    "fly": "^2.0.5",
+    "fly-clear": "^1.0.1",
+    "fly-esnext": "^2.0.1",
+    "fly-typescript": "^1.0.0",
+    "fly-watch": "^1.1.1"
   },
   "engines": {
     "node": ">=6.9.5"
