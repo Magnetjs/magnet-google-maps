@@ -1,23 +1,23 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _convert = require('magnet-core/convert');
-
-var _convert2 = _interopRequireDefault(_convert);
-
-var _maps = require('@google/maps');
-
-var _maps2 = _interopRequireDefault(_maps);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = (0, _convert2.default)(_maps2.default, {
-  namespace: 'googleMaps',
-  initializer: 'createClient',
-  params: config => _extends({}, config, { key: config.key || config.apiKey, Promise: global.Promise })
-});
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const module_1 = require("magnet-core/module");
+const maps_1 = require("@google/maps");
+class GoogleMaps extends module_1.Module {
+    get moduleName() { return '_google_maps'; }
+    get defaultConfig() { return __dirname; }
+    setup() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.insert(maps_1.default.createClient(this.config));
+        });
+    }
+}
+exports.default = GoogleMaps;
+//# sourceMappingURL=index.js.map
