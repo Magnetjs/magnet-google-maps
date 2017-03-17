@@ -1,7 +1,7 @@
 import { Module } from 'magnet-core/module'
-import googleMaps from '@google/maps'
+import * as googleMaps from '@google/maps'
 
-export default class GoogleMaps extends Module {
+export default class MagnetGoogleMaps extends Module {
   get moduleName () { return '_google_maps' }
   get defaultConfig () { return __dirname }
 
