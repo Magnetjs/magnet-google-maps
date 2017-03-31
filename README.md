@@ -1,4 +1,6 @@
 ### Usage
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Magnetjs/magnet-google-maps.svg)](https://greenkeeper.io/)
 All api should refer [Google Maps](https://github.com/googlemaps/google-maps-services-js)
 
 Basic
