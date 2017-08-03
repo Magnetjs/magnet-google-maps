@@ -9,15 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
-const maps_1 = require("@google/maps");
-class GoogleMaps extends module_1.Module {
+const googleMaps = require("@google/maps");
+class MagnetGoogleMaps extends module_1.Module {
     get moduleName() { return '_google_maps'; }
     get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            this.insert(maps_1.default.createClient(this.config));
+            this.insert(googleMaps.createClient(this.config));
         });
     }
 }
-exports.default = GoogleMaps;
+exports.default = MagnetGoogleMaps;
 //# sourceMappingURL=index.js.map
